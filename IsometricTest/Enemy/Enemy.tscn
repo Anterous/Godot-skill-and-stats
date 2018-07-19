@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Enemy/Enemy.gd" type="Script" id=1]
+[ext_resource path="res://Enemy/New Piskel.png" type="Texture" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 46.0672
+
+[node name="Enemy" type="KinematicBody2D" index="0" groups=[
+"Enemy",
+]]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+char_scene_path = "res://character.tscn"
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+position = Vector2( 3.4175, -2.27834 )
+shape = SubResource( 1 )
+
+[node name="Health" type="Node2D" parent="." index="2"]
+
+position = Vector2( 3.80524, -2.85393 )
+
+

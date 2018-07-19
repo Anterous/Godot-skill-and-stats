@@ -1,0 +1,75 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://character.gd" type="Script" id=1]
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 20.8308
+height = 6.12843
+
+[node name="KinematicBody2D" type="KinematicBody2D" index="0" groups=[
+"character",
+]]
+
+rotation = 6.27549
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+weapon_scene_path = ""
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="0"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+blend_times = [  ]
+
+[node name="Body" type="Sprite" parent="." index="1"]
+
+scale = Vector2( 0.65828, 0.607941 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="WeaponSpawnPoint" type="Node2D" parent="Body" index="0"]
+
+position = Vector2( 20.7829, -38.286 )
+scale = Vector2( 0.303822, 0.328979 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
+
+position = Vector2( -7.75393, -1.28915 )
+scale = Vector2( 0.938583, 0.966878 )
+shape = SubResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="." index="3"]
+
+position = Vector2( -10.4469, -14.1704 )
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit_left = -10000000
+limit_top = -10000000
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = false
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = false
+smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.2
+drag_margin_top = 0.2
+drag_margin_right = 0.2
+drag_margin_bottom = 0.2
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
+
+
